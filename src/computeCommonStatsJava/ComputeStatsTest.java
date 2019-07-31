@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Vector;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,6 +28,13 @@ class ComputeStatsTest {
 			assertEquals(csd.GetMean(), 3.0f);
 			assertEquals(csd.GetMedian(), 3);
 			assertEquals(csd.GetStandardDeviation(), 1.4142135f);
+			
+			List<Integer> theIntList = new Vector<Integer>();
+			theIntList = Arrays.asList(1, 5, 2, 4, 9, 5, 32, 157, 78, 952);
+			cs.JJQuickSort(theIntList, 0, theIntList.size() - 1);
+			assertEquals(theIntList.get(7), 78);
+			assertEquals(theIntList.get(3), 5);
+			assertEquals(theIntList.get(4), 5);
 		}
 		catch(Exception e)
 		{
